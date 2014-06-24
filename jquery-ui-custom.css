@@ -1027,6 +1027,21 @@ button.ui-datepicker-trigger{padding:0.4em 0.8em;}
   .list,.select,.comment{width: 100%;float: none;display:block}
 }
 .dragDropTable li{-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;}
+/* Upload iframe */
+.files-list{margin:0.5em 1em;padding:0;list-style:none}
+.previewblock {
+    background-color: #eee;
+    margin: 0.5em auto;
+    padding: 0.2em 0;
+}
+.previewblock table{width:100%;table-layout:fixed;}
+.previewblock table img{max-height:100px;}
+.uploadedfiles .upload{text-overflow: ellipsis;overflow: hidden;}
+.uploadedfiles .upload:hover{overflow: visible;}
+.uploadedfiles .comment {
+    float: none;
+    width: auto;
+}
 /* Multi column */
 /*column_style ul*/
 .colstyle-ul
@@ -1150,4 +1165,32 @@ input[type="text"],input.text,input[type="password"],input[type="email"],textare
 -moz-transition: all 500ms linear; -o-transition: all 500ms linear; -webkit-transition: all 500ms linear; transition: all 500ms linear; }
 .menu a{
 -moz-transition:all 200ms linear; -o-transition:all 200ms linear; -webkit-transition:all 200ms linear; transition:all 200ms linear; }
+/* Public stats */
+.statisticssummary,.statisticstable{width:100%}
+input.statisticsbrowsebutton {display:none}
 
+.statisticstable th,
+.statisticstable td {
+  padding: 0.4em;
+  line-height: 1.5;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+  background:#fff
+}
+.statisticstable th {
+  font-weight: bold;
+}
+
+.statisticstable thead th {
+  vertical-align: bottom;
+}
+.statisticstable thead {
+  margin-top: 2em;
+}
+.statisticstable thead tr:first-child{
+  background:#EEE;text-align:center;
+}
+.statisticstable thead tr:first-child th{
+  text-align:center;
+}

@@ -16,7 +16,7 @@ replaceJavascriptAlert=true; // Replace common alert with jquery-ui dialog
 bMoveLanguageSelect=true // Move the language selector to the top
 bCloneNavigator=true // Clone the navigator in the header
 bMoveIndex=true // Move index in a fixed bix at rigth of the survey
-bHeaderFixed=true; // Fix the header
+bHeaderFixed=false; // Fix the header
 /* Some global tools */
 $(document).on("click",".menu-collapse",function(event){
 	var thismenu=$(this).next(".menu");
@@ -329,3 +329,4 @@ jQuery(function($) {
         });
     }
 });
+
