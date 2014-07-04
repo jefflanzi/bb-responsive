@@ -1149,7 +1149,6 @@ ul.cols-8 .answer-item:nth-child(8n+9) {clear:left;}
 .em_regex_validation{display: none;}
 .em_regex_validation.error {display: block;}
 .em_sum_range{margin:0.5em 0;}
-
 /* Some transition */
 .dragDropTable li,label, th{
 -moz-transition: background-color 300ms ease,text-shadow 300ms ease, box-shadow 300ms ease-in; 
@@ -1168,29 +1167,21 @@ input[type="text"],input.text,input[type="password"],input[type="email"],textare
 /* Public stats */
 .statisticssummary,.statisticstable{width:100%}
 input.statisticsbrowsebutton {display:none}
-
-.statisticstable th,
-.statisticstable td {
-  padding: 0.4em;
-  line-height: 1.5;
-  text-align: left;
-  vertical-align: top;
-  border-top: 1px solid #dddddd;
-  background:#fff
-}
-.statisticstable th {
-  font-weight: bold;
-}
-
-.statisticstable thead th {
-  vertical-align: bottom;
-}
-.statisticstable thead {
-  margin-top: 2em;
-}
-.statisticstable thead tr:first-child{
-  background:#EEE;text-align:center;
-}
-.statisticstable thead tr:first-child th{
-  text-align:center;
+.statisticstable th,.statisticstable td {padding: 0.4em;line-height: 1.5;text-align: left;vertical-align: top;border-top: 1px solid #dddddd;background:#fff}
+.statisticstable th {font-weight: bold;}
+.statisticstable thead th {vertical-align: bottom;}
+.statisticstable thead {margin-top: 2em;}
+.statisticstable thead tr:first-child{background:#EEE;text-align:center;}
+.statisticstable thead tr:first-child th{text-align:center;}
+/* Print the survey page */
+@media print {
+body{font-size: 11pt;background-color:#fff;background-image:none;}
+.errormandatory {display:none}
+.navigator{display:none}
+button,input[type="button"]{display:none}
+.question-wrapper{border: solid 1pt #ccc;page-break-inside: avoid;page-break-before: auto;}
+#footer {display:none}
+.with-aside #main {float: none;margin-left: 0;width: 100%;}
+.with-aside #limesurvey {margin-left: 0;}
+.aside-index {float: none; width: auto;}
 }

@@ -28,6 +28,7 @@ $(document).on("click",":not(.menu-collapse)",function(){
 	$(".menu").slideUp("fast");
 });
 $(document).ready(function(){
+
 	if(bMoveLanguageSelect || bCloneNavigator){$("<div class='tools cloned-tools' />").appendTo("#head .wrapper");}
 	if(bCloneNavigator){cloneNavigator();}
 	if(bMoveLanguageSelect){moveLanguageSelect();}
@@ -52,7 +53,7 @@ function navbuttonsJqueryUi(){
 }
 
 // Replace common alert with jquery-ui dialog
-if(replaceJavascriptAlert){
+if( window.screen.availWidth > 600 && replaceJavascriptAlert){
 	function alert(text) {
 		var $dialog = $('<div></div>')
 			.html(text)
