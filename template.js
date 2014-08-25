@@ -16,7 +16,7 @@ replaceJavascriptAlert=true; // Replace common alert with jquery-ui dialog
 bMoveLanguageSelect=true // Move the language selector to the top
 bCloneNavigator=true // Clone the navigator in the header
 bMoveIndex=true // Move index in a fixed bix at rigth of the survey
-bHeaderFixed=false; // Fix the header
+bHeaderFixed=true; // Fix the header
 /* Some global tools */
 $(document).on("click",".menu-collapse",function(event){
 	var thismenu=$(this).next(".menu");
@@ -51,7 +51,10 @@ function navbuttonsJqueryUi(){
     $("#moveprevbtn").wrapInner("<span class='btn-text ui-button-text' />").prepend("<i class='btn-icon ui-icon ui-icon-arrowthick-1-w'>   </i> ");
     $("#movesubmitbtn").wrapInner("<span class='btn-text ui-button-text' />").append(" <i class='btn-icon ui-icon ui-icon-arrowthickstop-1-s'>   </i>");
 }
-
+function noScrollOnSelect()
+{
+    // Disable the default no scroll on select
+}
 // Replace common alert with jquery-ui dialog
 if( window.screen.availWidth > 600 && replaceJavascriptAlert){
 	function alert(text) {
@@ -117,27 +120,13 @@ function movePrevButton(){
 /* Clone the language selector (if exist) in the header*/
 function moveLanguageSelect(){
 	if($("#changelangbtn").length){
-		$(document).on("click",".menu-lang :not(.ui-state-disabled) a",function(){
-			$("#lang").val($(this).parent('li').data("lang")).trigger('change');
+		$(document).on("change",".select-lang",function(){
+			$("#lang").val($(this).val()).trigger('change');
 		});
 		var selectedLang=$("#lang").val();
-		var maxWidth=1;
-		newLanguageMenu="<div class='menu-wrapper tool'><a class='ui-button menu-collapse'><span class='ui-button-text menu-text'>"+$("#changelangbtn").text()+"</span><span class='ui-icon menu-icon ui-icon-triangle-1-s'>   </span></a>"
-						+"<ul class='menu-lang menu'>";
-		$("#lang option").each(function(){
-			var stateClass="";
-			if($(this).attr("value")==selectedLang){
-				stateClass="ui-state-disabled";
-			}
-			newLanguageMenu=newLanguageMenu+"<li class='"+stateClass+"' data-lang='"+$(this).attr("value")+"'>"
-							+"<a>"+$(this).text()+"</a>"
-							+"</li>";
-			if($(this).text().length>maxWidth){maxWidth=$(this).text().length;}
-		});
-		newLanguageMenu=newLanguageMenu+"</ul></div>";
+		newLanguageMenu="<div class='menu-wrapper tool'>"
+						+"<select class='select-lang'>"+$("#lang").html()+"</select></div>";
 		$(newLanguageMenu).appendTo(".cloned-tools");
-		$(".menu-lang").css("width",maxWidth+"em");
-		$(".menu-lang").menu();
 		$("#lang").hide();
 	}
 }
