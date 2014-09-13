@@ -146,7 +146,7 @@ function updateIndex(){
             $("#index").css("top",Math.max(mainOffset,minOffset)+"px");
         });
         $(document).on('click','#index :submit',function(){
-            $(this).clone().removeAttr('id').appendTo("#limesurvey").click();
+            $(this).addClass("hidden").appendTo("#limesurvey").click();
         });
         // Fix for ranking question type
         if(typeof doDragDropRank!="undefined" && $.isFunction( doDragDropRank )){

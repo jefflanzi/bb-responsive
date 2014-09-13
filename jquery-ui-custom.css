@@ -551,7 +551,7 @@ body .ui-tooltip { border-width: 2px; }
 .ui-dialog,.ui-datepicker{z-index:5 !important}
 /* #Some tools */
 .hide{position:absolute;top:auto;left:-999999px}
-.nodisplay{display:none !important;height: 0;width:0;overflow:hidden;visibility:hidden !important;}
+.nodisplay,.hidden{display:none !important;height: 0;width:0;overflow:hidden;visibility:hidden !important;}
 .affix {position: fixed;}
 .clearfix:before,.clearfix:after {display: table;content: " ";}
 .clearfix:after {clear: both;}
