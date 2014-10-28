@@ -1,13 +1,13 @@
 
 		</div><!--end #main-->
-		<div id="navigation" class="aside">
+		<div id="navigation" class="aside" class="starthidden">
 			<!-- Place for some navigation -->
 		</div>
-		<div id="extra" class="aside">
+		<div id="extra" class="aside" class="starthidden">
 			<!-- Place for some extra -->
 		</div>
 	</div><!--end #content -->
-	<div id="footer">
+	<div id="footer" class="starthidden">
 		<ul id="credits">
 		<li class="first">Powered by Libre Software</li>
 		<li>Template &copy; <a href="http://www.sondages.pro" title="Sondages en ligne, enquêtes et recueil de données par Internet.">Denis Chenu, Sondages Pro</a> 
@@ -16,3 +16,4 @@
 		</ul>
 	</div>
 </div><!-- end container-->
+<div class="loader"><span class="ui-icon-loading"></span></div>

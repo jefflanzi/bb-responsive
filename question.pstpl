@@ -4,11 +4,11 @@
 		{if(!is_empty(QUESTION_NUMBER) or !is_empty(QUESTION_CODE),"<span class='qnumcode'>"+QUESTION_NUMBER+" "+QUESTION_CODE+"</span>","")}
 		{QUESTION_TEXT}
 	</div>
+	{if(!is_empty(QUESTIONHELP),"<div class='question-help clearfix'>"+QUESTIONHELP+"</div>","")}
 	<div class="help-wrapper">
 		{if(!is_empty(QUESTION_MAN_MESSAGE),"<div class='mandatory error'>"+QUESTION_MAN_MESSAGE+"</div>","")}
 		{QUESTION_VALID_MESSAGE}
 		{if(!is_empty(QUESTION_HELP),"<div class='tip help'>"+QUESTION_HELP+"</div>","")}
 	</div>
 	<div class="answers-wrapper clearfix">{ANSWER}</div>
-	{if(!is_empty(QUESTIONHELP),"<div class='question-help clearfix'>"+QUESTIONHELP+"</div>","")}
 </div>

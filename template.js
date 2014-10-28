@@ -10,6 +10,7 @@
   Inspiration by jquery mobile http://jquerymobile.com/ under Dual licensed under the MIT or GPL Version 2 licenses.
   Tango Icon Project http://tango.freedesktop.org/ distributed under Public Domain
 */
+
 // Some var to enable/disable some function
 useDefaultProgress=false; // Use the default progress-wrapper from LimeSurvey core
 replaceJavascriptAlert=true; // Replace common alert with jquery-ui dialog
@@ -17,18 +18,15 @@ bMoveLanguageSelect=true // Move the language selector to the top
 bCloneNavigator=true // Clone the navigator in the header
 bMoveIndex=true // Move index in a fixed bix at rigth of the survey
 bHeaderFixed=true; // Fix the header
-/* Some global tools */
-$(document).on("click",".menu-collapse",function(event){
-	var thismenu=$(this).next(".menu");
-	$("menu").not(thismenu).slideUp("fast");
-	$(thismenu).slideToggle("fast");
-	event.stopPropagation();
-});
-$(document).on("click",":not(.menu-collapse)",function(){
-	$(".menu").slideUp("fast");
-});
-$(document).ready(function(){
 
+window.onbeforeunload = function() { 
+	$("body").removeClass("loaded").addClass("loading");
+ };
+fixLabelClass(); 
+$(document).ready(function(){
+	removeBack();
+	addScrollTop();
+	fixSelectWidth();
 	if(bMoveLanguageSelect || bCloneNavigator){$("<div class='tools cloned-tools' />").appendTo("#head .wrapper");}
 	if(bCloneNavigator){cloneNavigator();}
 	if(bMoveLanguageSelect){moveLanguageSelect();}
@@ -43,7 +41,13 @@ $(document).ready(function(){
 		$('label > input:checkbox, label > input:radio, input:radio + label, input:checkbox + label').bind('click', function(){
 		});
 	}
+	$("body").removeClass("loading").addClass("loaded");
 })
+function removeBack(){
+window.location.hash="nbb";
+window.location.hash="";
+window.onhashchange=function(){window.location.hash="";}
+}
 
 function navbuttonsJqueryUi(){
     // Do our own button (not jquery default)
@@ -55,8 +59,43 @@ function noScrollOnSelect()
 {
     // Disable the default no scroll on select
 }
+/* Add a little icon with Scrol to top : /!\ no text put inaccessible */
+function addScrollTop(){
+	$("<a href='#' class='scrollToTop'>&nbsp;</a>").appendTo("body");
+	$(window).scroll(function(){
+		if ($(this).scrollTop() > 100) {
+			$('.scrollToTop').fadeIn();
+		} else {
+			$('.scrollToTop').fadeOut();
+		}
+	});
+	$('.scrollToTop').click(function(){
+		$('html, body').animate({scrollTop : 0},300);
+		return false;
+	});
+}
+
+/* Fix the max width for all option, for ip(hone|od|ad : add an empty optgroup */
+function fixSelectWidth(){
+	if (navigator.userAgent.match(/(ip(hone|od|ad))/i)) {
+	$('select').each(function(){
+		$(this).append("<optgroup label=''></optgroup>");
+	});
+	}
+	$('p select').each(function(){
+		var selectwidth=$(this).innerWidth();
+		$(this).find('option').outerWidth(selectwidth);
+	});
+	$( window ).resize(function() {
+		$('p select').each(function(){
+			var selectwidth=$(this).innerWidth();
+			$(this).find('option').outerWidth(selectwidth);
+		});
+	});
+}
+
 // Replace common alert with jquery-ui dialog
-if( window.screen.availWidth > 600 && replaceJavascriptAlert){
+if(!(window.opera && window.opera.version) && window.screen.availWidth > 600 && replaceJavascriptAlert){
 	function alert(text) {
 		var $dialog = $('<div></div>')
 			.html(text)
@@ -146,7 +185,7 @@ function updateIndex(){
             $("#index").css("top",Math.max(mainOffset,minOffset)+"px");
         });
         $(document).on('click','#index :submit',function(){
-            $(this).addClass("hidden").appendTo("#limesurvey").click();
+            $(this).clone().removeAttr('id').appendTo("#limesurvey").click();
         });
         // Fix for ranking question type
         if(typeof doDragDropRank!="undefined" && $.isFunction( doDragDropRank )){
@@ -257,6 +296,7 @@ function cloneNavigator(){
 }
 /* Fix the header */
 function headerFixed(){
+
 	$("#head").wrap( "<div class='head affix'></div>" );;// Use same class than bootstrap
 	$("#container .pagetitle").css("padding-top",$("#head").outerHeight());
 }
@@ -289,34 +329,37 @@ if(!useDefaultProgress){
 		}
 	});
 }
-/* Fire event hide and show for "Expression Manager" hide/show */
-jQuery(function($) {
-    var _oldShow = $.fn.show;
-    $.fn.show = function(speed, oldCallback) {
-        return $(this).each(function() {
-        var obj = $(this),
-        newShowCallback = function() {
-            //console.log('afterShow');
-            obj.trigger('afterShow');
-        };
-        obj.trigger('beforeShow');
-        _oldShow.apply(obj, [speed, newShowCallback]);
-        });
-    }
-    var _oldHide = $.fn.hide;
-    $.fn.hide = function(speed, oldCallback) {
-        return $(this).each(function() {
-        var obj = $(this),
-        newHideCallback = function(obj) {
-            if ($.isFunction(oldCallback)) {
-              oldCallback.apply(obj);
-            }
-            //console.log('afterHide');
-            obj.trigger('afterHide');
-        };
-        obj.trigger('beforeHide');
-        _oldHide.apply(obj, [speed, newHideCallback]);
-        });
-    }
-});
-
+function fixLabelClass(){
+	$(document).on('click','td.radio-item [type=radio]',function(){
+		$('[type=radio][name="'+$(this).attr('name')+'"]').not(this).each(function(){
+			$(this).closest('td').removeClass('checked');
+		});
+		$(this).closest('td').addClass('checked');
+	});
+	$(document).ready(function(){
+		$('td.radio-item [type=radio][checked]').each(function(){
+			$(this).closest('td').addClass('checked');
+		});
+	});
+	$(document).ready(function(){
+		$('td.radio-item [type=radio][checked]').each(function(){
+			$(this).closest('td').addClass('checked');
+		});
+	});
+	$(document).on('blur focusout','[type=text]',function(){
+		if($(this).val()!=''){
+			$(this).closest('li.other-item').addClass('checked');
+		}else{
+			$(this).closest('li.other-item').removeClass('checked');
+		}
+	});
+	$(document).on('click','li.radio-item [type=radio]',function(){
+		$(this).closest('ul').find('li.other-item').removeClass('checked');
+	});
+	$(document).on('click','li.other-item',function(){
+		$(this).find("input[type=text]").focus();
+	});
+	$(document).ready(function(){
+		$('li.other-item input[type=text][value!=""]').addClass('checked');
+	});
+}
