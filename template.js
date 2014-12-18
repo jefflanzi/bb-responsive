@@ -27,6 +27,7 @@ $(document).ready(function(){
 	if(bMoveLanguageSelect || bCloneNavigator){$("<div class='tools cloned-tools' />").appendTo("#head .wrapper");}
 	if(bCloneNavigator){cloneNavigator();}
 	if(bMoveLanguageSelect){moveLanguageSelect();}
+	if(bMoveLanguageSelect || bCloneNavigator){fixTitleWidth();}
 	if(bHeaderFixed){headerFixed();}
 	if(bMoveIndex){updateIndex();}
 	hovercolumn();
@@ -69,7 +70,7 @@ function noScrollOnSelect()
 {
 	// Disable the default no scroll on select
 }
-/* Add a little icon with Scrol to top : /!\ no text put inaccessible */
+/* Add a little icon with Scroll to top : /!\ no text put inaccessible */
 function addScrollTop(){
 	$("<a href='#' class='scrollToTop'>&nbsp;</a>").appendTo("body");
 	$(window).scroll(function(){
@@ -105,7 +106,7 @@ function fixSelectWidth(){
 }
 
 // Replace common alert with jquery-ui dialog
-if(!(window.opera && window.opera.version) && window.screen.availWidth > 600 && replaceJavascriptAlert){
+if(window.screen.availWidth > 600 && replaceJavascriptAlert){
 	function alert(text) {
 		var $dialog = $('<div></div>')
 			.html(text)
@@ -176,10 +177,16 @@ function moveLanguageSelect(){
 		newLanguageMenu="<div class='menu-wrapper tool'>"
 						+"<select class='select-lang'>"+$("#lang").html()+"</select></div>";
 		$(newLanguageMenu).appendTo(".cloned-tools");
-		$("#lang").hide();
+		$("#lang").addClass('tool-cloned');
 	}
 }
-
+/* Fix the title width according to header tools */
+function fixTitleWidth() {
+	$("#head .pagetitle").width($("#head > .wrapper").width() - $("#head .cloned-tools").outerWidth() - 8);
+	$( window ).resize(function() {
+		$("#head .pagetitle").width($("#head > .wrapper").width() - $("#head .cloned-tools").outerWidth() - 8);
+	});
+}
 /* Move the index (and accordion it) */
 function updateIndex(){
 	if($("#index").length){

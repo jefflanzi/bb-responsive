@@ -626,14 +626,17 @@ body .ui-tooltip { border-width: 2px; }
 #head a.link-logo:hover,#head a.link-logo:focus,#head a.link-logo:active{background:transparent;}
 #head a.link-logo {outline: 0 none;}
 .ie6 #head img.logo,.ie7 #head img.logo{height:4em;}
-#head .tools{float:right;margin:0.7em;}
+#head .tools{float:right;margin:0.7em 0;}
 .cloned-tools .tool{display:inline-block;}
+.tool-cloned{display:none}
 @media handled,screen and (max-width: 959px) {
 #head .wrapper{padding:0 0.3em;}
 .pagesubtitle .wrapper{padding:0 0.3em;}
 #head h1{font-size:1em;}
 #head .navigator-clone .button .ui-icon{display:block;bottom: 0;margin: 0;}
 #head .navigator-clone .btn-text{display:none;}
+#head .select-lang{display:none;}
+.tool-cloned{display:block}
 }
 @media handled,screen and (max-width: 479px) {
   #head img.logo{max-height:2em;width:auto;}
