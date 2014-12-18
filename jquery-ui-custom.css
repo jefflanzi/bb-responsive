@@ -1538,6 +1538,7 @@ display:none;
 }
 
 @media print {
+    html,body {height:99%;page-break-after:none !important}
     body{background-color:#fff;background-image:none;font: 12pt "Luxi sans", "Lucida Grande", Lucida, "Lucida Sans Unicode", sans-serif;color: #000;}
     .wrapper,#content{max-width:100%;}
     #head{background:#fff;color:#000}
@@ -1557,5 +1558,6 @@ display:none;
     .scrollToTop{display:none:width:0;height:0;}
     .head.affix:after {box-shadow: 0 0 0;display:none;}
     .affix {position: relative;}
+    a[href^="#"]:after,a[href^="javascript:"]:after {content: "";}
 }
 
