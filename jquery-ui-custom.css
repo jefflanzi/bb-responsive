@@ -623,7 +623,7 @@ body .ui-tooltip { border-width: 2px; }
    left: 0;
    width: 100%;
    height: 1px;
-   z-index: 3;
+   z-index: 9;
    -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
    -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
    box-shadow: 0px 0px 10px rgba(0,0,0,.8);
@@ -948,6 +948,9 @@ table.question td,table.question th{
 label:hover, input:focus + label{
 color: #222222;text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
+.js li.other-item:hover label{
+color: #222222;text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
 .js td.radio-item,.js td.checkbox-item,.js td.radio-item label,.js td.checkbox-item label,.js td.radio-item input,.js td.checkbox-item input{cursor:pointer}
 table.question tbody tr:hover th, table.question thead th.hover, table.question tbody tr.focus th, table.question thead th.focus{color: #222222;text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);}
 table.question thead th.hover{background:#F9F9F9;}
@@ -994,6 +997,8 @@ ul.radio-list li.other-item label,ul.checkbox-list li.other-item label
   {display:inline;display:inline-block;border:0px none #CCC;padding:0;margin:0;margin-left:30px}
 ul.checkbox-list li.other-item .checkbox
   {opacity:0.3;visibility: hidden;}
+.js li.other-item:hover
+  {cursor:pointer}
 .checkbox-list input.checkbox[disabled]
 {visibility:hidden}
 ul.text-list .question-item,ul.text-list .help-item,ul.checkbox-text-list .question-item,ul.checkbox-text-list .help-item
@@ -1319,7 +1324,7 @@ li.radio-item input[type=radio] + label:before
     margin-top: -0.7em;
     position: absolute;
     top: 50%;
-    z-index: 3;
+    z-index: 2;
 }
 li.checkbox-item input[type=checkbox] + label:before,
 li.checkbox-text-item input[type=checkbox] + label:before,
