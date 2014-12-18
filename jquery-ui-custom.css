@@ -1256,7 +1256,8 @@ tr,td{
 -webkit-transition: background-color 500ms ease; transition: background-color 500ms ease; }
 input[type="text"],input.text,input[type="password"],input[type="email"],textarea,select{
 -webkit-transition:all 200ms linear; transition:all 200ms linear; }
-.em_num_answers,.dynamic_remaining,.dynamic_sum,.em_sq_validation,.em_other_comment_mandatory,.em_q_fn_validation,.em_regex_validation,.em_sum_range,.em_value_range{
+.dynamic_remaining,.dynamic_sum,
+.emtip{
 -webkit-transition: all 500ms linear; transition: all 500ms linear; }
 /* Public stats */
 .statsHeader{display:none}
