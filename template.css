@@ -1,0 +1,123 @@
+/**
+* This file is part of LimeSurvey template SkeletonQuest
+* Make your your change here
+**/
+body{background:#f6f6f6;color:#1e4057;}
+h1, h2, h3, h4, h5, h6 {color: #1e4057;}
+a, a:visited { color: #2a5a7a;}
+a:hover, a:focus { color: #1e4057; }
+#head{
+  border-top:2px solid #1e4057;
+  color:#fff;
+  background:#2a5a7a;
+}
+#head h1{
+  color:#fff;
+}
+.subtitle{
+  background:transparent;color:inherit;
+}
+#footer{
+  border-top:2px solid #1e4057;
+  color:#fff;
+  background:#2a5a7a;
+}
+#footer a, #footer a:visited {color:#fff;}
+#footer a:hover, #footer a:focus, #footer a:active {color: #ffffff;}
+
+#movenextbtn,#movesubmitbtn{
+  background-color:#2a5a7a;color:#fff;text-shadow: 0 1px rgba(0, 0, 0, 0.75);
+}
+#movenextbtn:hover,#movesubmitbtn:hover,#movenextbtn:focus,#movesubmitbtn:focus{
+  background-color:#6789a0;
+}
+#movenextbtn:active,#movesubmitbtn:active{
+  background-color:#6789a0;
+
+}
+#movenextbtn .ui-icon,#movesubmitbtn .ui-icon{
+    background-image: url("images/ui-icons_ededed_256x240.png");
+}
+
+li.radio-item label,li.checkbox-item label
+  {background-color: #FFF;}
+li.radio-item.other-item,li.checkbox-item.other-item,li.checkbox-text-item.other-item .option
+  {background-color: #FFF;}
+li.radio-item.other-item label,li.checkbox-item.other-item label
+  {background-color: transparent;}
+/* checked */
+li.radio-item input.radio:checked + label,li.checkbox-item input.checkbox:checked + label
+  {background:#6789a0;color:#FFF;}
+li.other-item input.radio:checked + label,li.other-item input.checkbox:checked + label
+  {background:transparent;color:inherit;}
+li.other-item.checked
+  {background:#6789a0;color:#FFF;}
+/* hover et focus */
+li.radio-item label:hover,li.radio-item input.radio:focus + label,li.checkbox-item  input.checkbox + label:hover,li.checkbox-item  input.checkbox:focus + label
+  {background:#2a5a7a;color:#fff}
+.js li.other-item:hover
+  {background:#2a5a7a;color:#fff}
+.js li.other-item:hover label
+  {color:#fff}
+li.radio-item input.radio[disabled] + label,li.checkbox-item input.checkbox[disabled] + label
+{
+  background:transparent;
+   cursor:inherit;color:#666;
+}
+
+.js table.question tbody tr td.radio-item:hover {background: #2a5a7a;}
+.js td.radio-item.checked{background-color:#6789a0;}
+.js table.question tbody tr td.checkbox-item:hover {background: #2a5a7a;}
+.js td.checkbox-item.checked{background-color:#6789a0;}
+
+li.checkbox-item input[type=checkbox] + label:before,
+li.checkbox-text-item input[type=checkbox] + label:before,
+td.checkbox-item input[type=checkbox] + label
+ {
+	background-color: #CCC;
+}
+li.radio-item input[type=radio] + label:before,
+td.radio-item input[type=radio] + label
+{
+	border-color: #CCC;
+	background-color: #CCC;
+}
+li.checkbox-item input[type=checkbox]:checked + label:before,
+li.checkbox-text-item input[type=checkbox]:checked + label:before,
+td.checkbox-item input[type=checkbox]:checked + label
+{
+    background-color: #CCC;
+    border-color: #CCC;
+}
+li.radio-item input[type=radio]:checked + label:before,
+td.radio-item input[type=radio]:checked + label
+{
+	border-color: #CCC;
+	background-color:#000;
+}
+li.checkbox-item input[type=checkbox]:hover + label:before,
+li.checkbox-item input[type=checkbox] + label:hover:before,
+li.checkbox-text-item input[type=checkbox]:hover + label:before,
+li.checkbox-text-item input[type=checkbox] + label:hover:before,
+.js td.checkbox-item:hover input[type=checkbox] + label,
+{
+    background-color: #CCC;
+    border-color: #CCC;
+}
+
+.question-wrapper {
+  border:none;
+  border-top:2px solid #2a5a7a;
+  -webkit-border-radius: 0;border-radius: 0;
+}
+.question-text{
+  border-bottom:none;
+}
+@media print {
+    body{background-color:#fff;background-image:none;font: 12pt "Luxi sans", "Lucida Grande", Lucida, "Lucida Sans Unicode", sans-serif;color: #000;}
+    #head{background:#fff;}
+    .pagesubtitle{background:#ffffff}
+    #footer {display:none}
+    a:link,a:visited { color: #520; }
+    #head h1 {color: #000;}
+}
