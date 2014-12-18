@@ -17,13 +17,6 @@ body{direction:rtl;}
 blockquote {border-left: 0 none;border-right: 1px solid #ddd; }
 ol, ul{ margin-left: 0;margin-right: 30px; }
 ol ol, ol ul { margin: 4px 30px 5px 0;}
-.button,button,input[type="submit"],input[type="reset"],input[type="button"]
-,.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
-border-left-color: #aaa;border-right-color: #ccc;}
-.button:hover,button:hover,input[type="submit"]:hover,input[type="reset"]:hover,input[type="button"]:hover
-,.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
-border-left-color:#888;border-right-color:#aaa;
-}
 .ie6 .wrapper,.ie6 #content,.ie7 .wrapper,.ie7 #content{text-align:right;}
 #head .sitename{float:right}
 #head .tools{float:left;}

@@ -1,4 +1,3 @@
 {if(!is_empty(LANGUAGECHANGER),"<div class='tools languageselect' id='languageselect-wrapper'>"+LANGUAGECHANGER+"</div>","")}
-{if(!is_empty(SURVEYDESCRIPTION),"<div class='text description surveydescription'>"+SURVEYDESCRIPTION+"</div>","")}
 {PERCENTCOMPLETE}
 

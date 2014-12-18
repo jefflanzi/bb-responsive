@@ -1,17 +1,16 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>{SURVEYNAME} {GROUPNAME} {SITENAME}</title>
+    <title>{strip_tags(SURVEYNAME)} {strip_tags(GROUPNAME)} {strip_tags(SITENAME)}</title>
     <meta name="generator" content="LimeSurvey http://www.limesurvey.org" />
     <meta name="viewport" content="width=device-width, initial-scale=1," />
     <!-- The following line includes jquery-ui.css or jquery-ui-custom.css from template dir, template.css and needed specific css file for survey -->
     {TEMPLATECSS}
-
     <link rel="shortcut icon" href="{TEMPLATEURL}favicon.ico" />
     <!-- The following line includes jquery.js, jquery-ui.js, survey_runtime.js , template.js and needed specific js file for survey -->
     {TEMPLATEJS}
     {GOOGLE_ANALYTICS_JAVASCRIPT}
 </head>
-<body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} no-js">
+<body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} no-js loading">
 <script type='text/javascript'>/*<![CDATA[*/(function(H){ H.className=H.className.replace(/\bno-js\b/,'js') })(document.getElementsByTagName('body')[0]);/*]]>*/</script>
 <!--[if lt IE 7 ]> <div id="container" class="ie ie6 ielt7 ielt8 ielt9"> <![endif]-->
 <!--[if IE 7 ]> <div id="container" class="ie ie7 ielt8 ielt9"> <![endif]-->
@@ -20,9 +19,9 @@
 <!--[if gt IE 9]><!--><div id="container"><!--<![endif]-->
 	<div id="head">
 		<div class="wrapper">
-			<h1 class="sitename"><img src="{TEMPLATEURL}logo.png" alt="" class="logo"/>{SITENAME}</h1>
+			<h1 class="pagetitle surveytitle">{if(is_empty(SURVEYNAME),SITENAME,SURVEYNAME)}</h1>
 		</div>
 	</div>
-	<div class="pagetitle"><h2 class="surveytitle wrapper">{SURVEYNAME}</h2></div>
-	<div id="content">
+	{if(!is_empty(SURVEYDESCRIPTION),'<div class="pagesubtitle"><div class="surveydescription wrapper">'+SURVEYDESCRIPTION+'</div></div>','')}
+	<div id="content" class="starthidden">
 		<div id="main">
