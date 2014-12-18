@@ -361,11 +361,19 @@ function fixLabelClass(){
 			$(this).closest('td').addClass('checked');
 		});
 	});
+	$(document).on('click','td.checkbox-item',function(){
+		if($(this).find("[type=checkbox]").is(':checked')){
+			$(this).closest('td').addClass('checked');
+		}else{
+			$(this).closest('td').removeClass('checked');
+		}
+	});
 	$(document).ready(function(){
 		$('td.radio-item [type=radio][checked]').each(function(){
 			$(this).closest('td').addClass('checked');
 		});
 	});
+	/* Move radio before label to have same HTML in list and in table */
 	$(document).ready(function(){
 		$('td.radio-item label + [type=radio]').each(function(){
 			$(this).insertBefore($(this).prev('label'));
