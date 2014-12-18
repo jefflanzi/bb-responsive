@@ -692,7 +692,7 @@ body .ui-tooltip { border-width: 2px; }
   #footer ul.credits li.last{text-align:center;}
 }
 .pagesubtitle{margin:0;text-align:center;padding:0;}
-.surveydescription{text-align:left;line-height:2em;}
+.surveydescription{text-align:left;line-height:2em;font-family:Georgia,"Times New Roman",Helvetica,Arial,sans-serif;}
 /* With extra or navigation, see layoutgalla */
 
 
@@ -1260,7 +1260,7 @@ input[type="text"],input.text,input[type="password"],input[type="email"],textare
 .emtip{
 -webkit-transition: all 500ms linear; transition: all 500ms linear; }
 /* Public stats */
-.statsHeader{display:none}
+.statsSurveyTitle{display:none}
 .statisticssummary,.statisticstable{width:100%}
 input.statisticsbrowsebutton {display:none}
 .statisticstable th,.statisticstable td {padding: 0.4em;line-height: 1.5;text-align: left;vertical-align: top;border-top: 1px solid #ededed;background:#fff}
@@ -1540,7 +1540,8 @@ display:none;
 @media print {
     body{background-color:#fff;background-image:none;font: 12pt "Luxi sans", "Lucida Grande", Lucida, "Lucida Sans Unicode", sans-serif;color: #000;}
     .wrapper,#content{max-width:100%;}
-    #head{background:#fff;}
+    #head{background:#fff;color:#000}
+    #head h1 {color: #000;display:block;width:auto !important}
     .pagesubtitle{background:#ffffff}
     .errormandatory {display:none}
     .navigator{display:none}
@@ -1554,5 +1555,7 @@ display:none;
     a:after{ display: inline; content: " [" attr(href) "]"; }
     #content{padding:0 !important}
     .scrollToTop{display:none:width:0;height:0;}
+    .head.affix:after {box-shadow: 0 0 0;display:none;}
+    .affix {position: relative;}
 }
 

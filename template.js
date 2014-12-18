@@ -373,6 +373,11 @@ function fixLabelClass(){
 			$(this).closest('td').addClass('checked');
 		});
 	});
+	$(document).ready(function(){
+		$('td.checkbox-item [type=checkbox][checked]').each(function(){
+			$(this).closest('td').addClass('checked');
+		});
+	});
 	/* Move radio before label to have same HTML in list and in table */
 	$(document).ready(function(){
 		$('td.radio-item label + [type=radio]').each(function(){
