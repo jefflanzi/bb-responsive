@@ -125,7 +125,15 @@ padding: 0.6em 1em;
 #movenextbtn .ui-icon,#movesubmitbtn .ui-icon,#moveprevbtn .ui-icon{
     background-image: url("images/ui-icons_454545_256x240.png");
 }
-
+button.clearall, .button.clearall {
+    background:none;border:0 none #fff;text-shadow: 0 0 0 #fff;font-size:1em;font-weight:400;
+    color: #ccc;
+    text-decoration: underline;
+}
+button.clearall:hover,button.clearall:focus,.button.clearall:hover{
+    background-color:none;border:0 none #fff;
+    color:#0fa0ce
+}
 button::-moz-focus-inner,input::-moz-focus-inner{border: 0;padding: 0;}
 .disabled,.button.disabled,.button[disabled],button[disabled],input[type="submit"][disabled]
 {border:1px solid #dbdbdb;background:#FEFEFE;color:#dbdbdb;cursor:inherit;}
