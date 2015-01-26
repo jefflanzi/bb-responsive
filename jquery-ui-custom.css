@@ -894,10 +894,8 @@ h2#surveytitle{font-size:1.2em;text-align:left;line-height:2em;padding:0 5px}
   -webkit-box-sizing: border-box;-moz-box-sizing: border-box;-ms-box-sizing: border-box;box-sizing: border-box;
   *zoom: 1;
   display: block;
-  white-space: nowrap;
   margin: 0;
   padding: 0.6em 1em;
-  *display:inline;
 }
 #surveylist li a.surveytitle:hover,#surveylist li a.surveytitle:focus
 {
