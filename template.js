@@ -7,6 +7,7 @@
   Inspiration by jquery mobile http://jquerymobile.com/ under Dual licensed under the MIT or GPL Version 2 licenses.
 */
 
+bHaveJquery=false;
 // Some var to enable/disable some function
 useDefaultProgress=false; // Use the default progress-wrapper from LimeSurvey core
 replaceJavascriptAlert=true; // Replace common alert with jquery-ui dialog
@@ -15,6 +16,8 @@ bCloneNavigator=true // Clone the navigator in the header
 bMoveIndex=true // Move index in a fixed box at rigth of the survey
 bHeaderFixed=true; // Fix the header
 
+if (window.jQuery) {
+bHaveJquery=true;
 window.onbeforeunload = function() { 
 	$("body").removeClass("loaded").addClass("loading");
  };
@@ -41,6 +44,12 @@ $(document).ready(function(){
 	}
 	$("body").removeClass("loading").addClass("loaded");
 })
+}else{
+	window.onload = function() {
+		body = document.getElementsByTagName('body')[0];
+		body.className = body.className.replace(/\loading\b/,'loaded');
+	};
+}
 /* Add a hash to the url to disallow previous on survey */
 function removeBack(){
 	window.location.hash="nbb";
@@ -104,21 +113,22 @@ function fixSelectWidth(){
 		});
 	});
 }
-
+if (window.jQuery) {
 // Replace common alert with jquery-ui dialog
-if(window.screen.availWidth > 600 && replaceJavascriptAlert){
-	function alert(text) {
-		var $dialog = $('<div></div>')
-			.html(text)
-			.dialog({
-				title: '',
-				dialogClass: 'alert',
-				buttons: { "Ok": function() { $(this).dialog("close"); } },
-				show: { effect: "highlight", duration: 800 },
-				hide: {effect: "fade",duration: 500},
-				modal: true
-			});
-		$dialog.dialog('open');
+	if(window.screen.availWidth > 600 && replaceJavascriptAlert){
+		function alert(text) {
+			var $dialog = $('<div></div>')
+				.html(text)
+				.dialog({
+					title: '',
+					dialogClass: 'alert',
+					buttons: { "Ok": function() { $(this).dialog("close"); } },
+					show: { effect: "highlight", duration: 800 },
+					hide: {effect: "fade",duration: 500},
+					modal: true
+				});
+			$dialog.dialog('open');
+		}
 	}
 }
 /* Adapt column hover */
@@ -321,7 +331,7 @@ function headerFixed(){
 	}
 }
 /* Replace jquery ui progressbar */
-if(!useDefaultProgress){
+if(!useDefaultProgress && bHaveJquery){
 	jQuery(function($) {
 		$.fn.progressbar = function(option) {
 			return $(this).each(function() {
@@ -404,3 +414,4 @@ function fixLabelClass(){
 		$('li.other-item input[type=text][value!=""]').closest('li.other-item').addClass('checked');
 	});
 }
+
