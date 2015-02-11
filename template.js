@@ -17,33 +17,33 @@ bMoveIndex=true // Move index in a fixed box at rigth of the survey
 bHeaderFixed=true; // Fix the header
 
 if (window.jQuery) {
-bHaveJquery=true;
-window.onbeforeunload = function() { 
-	$("body").removeClass("loaded").addClass("loading");
- };
-disableEnterSubmit(); 
-fixLabelClass(); 
-$(document).ready(function(){
-	removeBack();
-	addScrollTop();
-	fixSelectWidth();
-	if(bMoveLanguageSelect || bCloneNavigator){$("<div class='tools cloned-tools' />").appendTo("#head .wrapper");}
-	if(bCloneNavigator){cloneNavigator();}
-	if(bMoveLanguageSelect){moveLanguageSelect();}
-	if(bMoveLanguageSelect || bCloneNavigator){fixTitleWidth();}
-	if(bHeaderFixed){headerFixed();}
-	if(bMoveIndex){updateIndex();}
-	hovercolumn();
-	tableinput();
-	movePrevButton();
-	// Opera mini labelling touch
-	operamini = window.operamini && ({}).toString.call( window.operamini ) === "[object OperaMini]";
-	if(operamini){
-		$('label > input:checkbox, label > input:radio, input:radio + label, input:checkbox + label').bind('click', function(){
-		});
-	}
-	$("body").removeClass("loading").addClass("loaded");
-})
+	bHaveJquery=true;
+	window.onbeforeunload = function() { 
+		$("body").removeClass("loaded").addClass("loading");
+	 };
+	disableEnterSubmit(); 
+	fixLabelClass(); 
+	$(document).ready(function(){
+		removeBack();
+		addScrollTop();
+		fixSelectWidth();
+		if(bMoveLanguageSelect || bCloneNavigator){$("<div class='tools cloned-tools' />").appendTo("#head .wrapper");}
+		if(bCloneNavigator){cloneNavigator();}
+		if(bMoveLanguageSelect){moveLanguageSelect();}
+		if(bMoveLanguageSelect || bCloneNavigator){fixTitleWidth();}
+		if(bHeaderFixed){headerFixed();}
+		if(bMoveIndex){updateIndex();}
+		hovercolumn();
+		tableinput();
+		movePrevButton();
+		// Opera mini labelling touch
+		operamini = window.operamini && ({}).toString.call( window.operamini ) === "[object OperaMini]";
+		if(operamini){
+			$('label > input:checkbox, label > input:radio, input:radio + label, input:checkbox + label').bind('click', function(){
+			});
+		}
+		$("body").removeClass("loading").addClass("loaded");
+	})
 }else{
 	window.onload = function() {
 		body = document.getElementsByTagName('body')[0];
@@ -102,16 +102,16 @@ function fixSelectWidth(){
 		$(this).append("<optgroup label=''></optgroup>");
 	});
 	}
-	$('p select,td select').each(function(){
-		var selectwidth=$(this).innerWidth();
-		$(this).find('option').outerWidth(selectwidth);
-	});
-	$( window ).resize(function() {
-		$('p select,td select').each(function(){
-			var selectwidth=$(this).innerWidth();
-			$(this).find('option').outerWidth(selectwidth);
-		});
-	});
+	//~ $('p select,td select').each(function(){
+		//~ var selectwidth=$(this).innerWidth();
+		//~ $(this).find('option').outerWidth(selectwidth);
+	//~ });
+	//~ $( window ).resize(function() {
+		//~ $('p select,td select').each(function(){
+			//~ var selectwidth=$(this).innerWidth();
+			//~ $(this).find('option').outerWidth(selectwidth);
+		//~ });
+	//~ });
 }
 if (window.jQuery) {
 // Replace common alert with jquery-ui dialog
