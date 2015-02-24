@@ -52,8 +52,8 @@ li.other-item input.radio:checked + label,li.other-item input.checkbox:checked +
   {background:transparent;color:inherit;}
 li.other-item.checked
   {background:#6789a0;color:#FFF;}
-/* hover et focus */
-li.radio-item label:hover,li.radio-item input.radio:focus + label,li.checkbox-item  input.checkbox + label:hover,li.checkbox-item  input.checkbox:focus + label
+/* hover */
+  li.radio-item label:hover,li.checkbox-item  input.checkbox + label:hover
   {background:#2a5a7a;color:#fff}
 .js li.other-item:hover
   {background:#2a5a7a;color:#fff}
