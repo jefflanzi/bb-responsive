@@ -202,6 +202,7 @@ function updateIndex(){
 	if($("#index").length){
 		//$("#limesurvey").wrapInner("<div id='indexed' />");
 		$("#index").appendTo("#content").wrap("<div class='aside aside-index' />");
+		$("body").addClass("with-aside");
 		$("#content").addClass("with-aside");
 		var mainOffset= $("#main").offset().top-$(window).scrollTop();
 		minOffset=0+$(".head.affix").outerHeight();
