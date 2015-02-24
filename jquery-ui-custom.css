@@ -653,22 +653,21 @@ body .ui-tooltip { border-width: 2px; }
 @media handled,screen and (max-width: 959px) {
 #head .wrapper{padding:0 0.3em;}
 .pagesubtitle .wrapper{padding:0 0.3em;}
-#head h1{font-size:1em;}
 #head .navigator-clone .button .ui-icon{display:block;bottom: 0;margin: 0;}
 #head .navigator-clone .btn-text{display:none;}
 #head .select-lang{display:none;}
 .tool-cloned{display:block}
 }
+@media handled,screen and (max-width: 769px) {
+#head h1{font-size:1.4em;}
+}
 @media handled,screen and (max-width: 479px) {
-  #head img.logo{max-height:2em;width:auto;}
-#head .menu-collapse .menu-text{max-width:5em;white-space: nowrap;text-overflow:ellipsis;overflow:hidden;}
-#head .menu-collapse .menu-text:hover,#head .menu-collapse .menu-text:focus{max-width:none;text-align:left;}
+#head h1{font-size:1em;}
+#head img{max-height:2em;width:auto;}
 .head.affix{position:absolute}
 .head.affix:after {position:absolute}
 }
 
-/*#head .sitename{float:left}*/
-/*#head .tools{float:right;}*/
 #content{padding-bottom:3em;}
 #footer {text-align:center;padding:0.3em 0 0.4em;margin:0;font-size:0.8em;font-weight:400;display:table;}
 #footer{border-width:1px 0;}
@@ -695,17 +694,19 @@ body .ui-tooltip { border-width: 2px; }
 .surveydescription{text-align:left;line-height:2em;font-family:Georgia,"Times New Roman",Helvetica,Arial,sans-serif;}
 /* With extra or navigation, see layoutgalla */
 
+/*
+.with-aside #main{float:none;margin-left:0}
+.with-aside #limesurvey{margin-left:0;}
+.aside-index{float:none;width:auto;}
+.aside-index #index{position:relative;width:100%;top:0 !important;}
+*/
+
+@media only screen and (min-width: 1024px) {
 
 .with-aside #main{float:left;margin-left:-20em;width:100%}
 .with-aside #limesurvey{margin-left:20em;}
 .aside-index{float:right;width:19em;}
 .aside-index #index{position:fixed;width:19em;}
-@media only screen and (max-width: 767px) {
-.with-aside #main{float:none;margin-left:0}
-.with-aside #limesurvey{margin-left:0;}
-.aside-index{float:none;width:auto;}
-.aside-index{float:none;width:auto;}
-.aside-index #index{position:relative;width:100%;top:0 !important;}
 }
 /* #Element */
 .note,#tokenmessage{position:relative;}
@@ -1400,7 +1401,7 @@ td.checkbox-item input[type=checkbox]:focus + label.hide.read,
 li.checkbox-item input[type=checkbox]:focus + label:before,
 li.checkbox-text-item input[type=checkbox]:focus + label:before
 {
-	box-shadow: 0 0 0.3em 0 #66afe9;
+	box-shadow: inset 0 0 0.1em 0 #66afe9, 0 0 0.3em 1px #66afe9;
 }
 
 .radio-item input[type=radio],
@@ -1481,7 +1482,9 @@ ul.checkbox-list li.other-item input.text {margin-left: 2.5em;}
 .progress-value{background:#f9f9f9;}
 .preprogress{background:#eee;color:#222;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
 
-.wrapper,#content{max-width:960px;}
+.wrapper,#content{max-width:60em;}
+.with-aside .wrapper,.with-aside #content{max-width:80em;}
+.wrapper{padding:0 0.7em;}
 body{font-size:1em;background:#f9f9f9}
 #content{background:#fff;border:1px solid #eee;}
 h1,h2,h3,h4,h5,h6{font-family:Georgia, "Times New Roman", Helvetica, Arial, sans-serif;}
