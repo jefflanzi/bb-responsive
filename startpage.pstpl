@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="{TEMPLATEURL}favicon.ico" />
     <!-- The following line includes jquery.js, jquery-ui.js, survey_runtime.js , template.js and needed specific js file for survey -->
     {TEMPLATEJS}
+	
     {GOOGLE_ANALYTICS_JAVASCRIPT}
 </head>
 <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} no-js loading">

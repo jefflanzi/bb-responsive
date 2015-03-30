@@ -416,3 +416,67 @@ function fixLabelClass(){
 	});
 }
 
+$(document).ready(function(){
+	$('.array-10-pt, .array-flexible-row, .array-5-pt, .array-increase-same-decrease, .array-yes-uncertain-no').responsiveArray();
+});
+ 
+/***** 
+	A plugin to insert drop-downs into arrays for small screens
+	Copyright (C) 2014 - Tony Partner (http://partnersurveys.com)
+	Licensed MIT, GPL
+	Version - 1.0
+	Create date - 09/06/14
+*****/
+(function( $ ){
+	$.fn.responsiveArray = function(options) {
+ 
+		return this.each(function() {
+ 
+				var thisQuestion = $(this);
+				var thisQID = $(thisQuestion).attr('id').split('question')[1];
+ 
+				// Some classes
+				$(thisQuestion).addClass('responsive-array');
+				$('table.questions-list tr', thisQuestion).each(function(i){
+					$('> *', this).each(function(i){
+						$(this).addClass('col-'+i);
+						if(i != 0) {
+							$(this).addClass('expanded');
+						}
+					});
+				});
+ 
+				// Insert a column
+				$('.col-0', thisQuestion).after('<td class="dropdown-cell" />');
+ 
+				// Insert dropdowns
+				$('body').append('<select style="display:none;" class="responsive-select responsive-select-'+thisQID+'" />');
+				$('table.questions-list thead th.expanded', thisQuestion).each(function(i){
+					$('.responsive-select-'+thisQID).append('<option value="">'+$(this).text()+'</option>');
+				});
+				$('table.questions-list tbody .dropdown-cell', thisQuestion).append($('.responsive-select-'+thisQID+'').clone());
+				$('tr.radio-list', thisQuestion).each(function(i){
+					var thisRow = $(this);
+					$('input.radio', this).each(function(i){
+						$('.responsive-select-'+thisQID+' option:eq('+i+')', thisRow).attr('value', $(this).attr('id'));
+					});
+					$('.responsive-select-'+thisQID+'', thisRow).val($('input.radio:checked', thisRow).attr('id'));
+				});
+				$('.responsive-select-'+thisQID+'', thisQuestion).show();
+ 
+				// Listeners on radios
+				$('input.radio', thisQuestion).click(function(event) {
+					var thisRow = $(this).closest('tr');
+					var thisID = $(this).attr('id');
+					//$('option[value="'+thisID+'"]').attr('selected', 'selected');
+					$('.responsive-select', thisRow).val(thisID);
+				});
+ 
+				// Listeners on dropdowns
+				$('.responsive-select-'+thisQID+'').change(function() {
+					$('#'+$(this).val()+'').click();
+				});
+ 
+		});
+	};
+})( jQuery );

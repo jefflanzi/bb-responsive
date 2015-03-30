@@ -1018,7 +1018,8 @@ ul.text-list .question-item,ul.text-list .help-item,ul.checkbox-text-list .quest
 .ielt8 ul.text-list .question-item,.ielt8 ul.text-list .help-item,.ielt8 ul.checkbox-text-list .question-item,.ielt8 ul.checkbox-text-list .help-item
   {display:block;clear:both;}
 ul.text-list span,ul.text-list label,ul.checkbox-text-list span
-  {display:inline;display:table-cell;width:50%;vertical-align:middle;padding:0.3em 0.5em 0.7em;}
+  {display:inline;display:inline-block;max-width:100%;vertical-align:middle;padding:0.3em 0.5em 0.7em;}
+  /*  {display:inline;display:table-cell;width:50%;vertical-align:middle;padding:0.3em 0.5em 0.7em;}*/
 ul.checkbox-text-list .option
   {padding:0;}
 ul.checkbox-text-list .option label
@@ -1371,7 +1372,7 @@ ul.checkbox-list li.other-item input.text {margin-left: 2.5em;}
 .ui-state-error .ui-icon, .ui-state-error-text .ui-icon {background-image: url(images/ui-icons_B94A48_256x240.png); }
 
 .progress-bar{border:1px solid #f1f1f1;border-width:1px 0}
-.progress-value{background:#f9f9f9;}
+.progress-value{background:#2A5A7A;color:#FFFFFF}
 .preprogress{background:#eee;color:#222;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
 
 .wrapper,#content{max-width:60em;}
