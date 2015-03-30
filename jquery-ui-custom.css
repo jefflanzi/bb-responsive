@@ -710,7 +710,7 @@ body .ui-tooltip { border-width: 2px; }
 }
 /* #Element */
 .note,#tokenmessage{position:relative;}
-.text{display:block;padding: 0 0.3em;}
+.text{display:block;padding: 0 1.5em;}
 .note,#tokenmessage{margin:0.5em auto;padding:1em;}
 .question-wrapper{margin:1em 0.7em;position:relative;}
 .answers-wrapper{padding:0.5em 0.3em;margin:0.5em auto;}
@@ -1380,7 +1380,7 @@ ul.checkbox-list li.other-item input.text {margin-left: 2.5em;}
 .wrapper{padding:0 0.7em;}
 body{font-size:1em;background:#f9f9f9}
 #content{background:#fff;border:1px solid #eee;}
-h1,h2,h3,h4,h5,h6{font-family:Georgia, "Times New Roman", Helvetica, Arial, sans-serif;}
+h1,h2,h3,h4,h5,h6{font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;}
 a, a:visited {}
 a:hover, a:focus {}
 #head{border-bottom:2px solid #f1f1f1;background:#f9f9f9;}

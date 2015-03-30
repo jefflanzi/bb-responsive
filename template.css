@@ -15,7 +15,7 @@ a:hover, a:focus { color: #1e4057; }
   color:#fff;
 }
 
-.grouptitle {color:#DA291C;}
+.grouptitle {color:#000000;font-weight:bold}
 
 .subtitle{background:transparent;color:inherit;}
 
