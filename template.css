@@ -8,14 +8,14 @@ a, a:visited { color: #222222;}
 a:hover, a:focus { color: #1e4057; }
 #head{
   border-bottom:2px solid #FFD100;
-  color:#fff;
+  color:#FFFFFF;
   background:#222222;
 }
 #head h1{
   color:#fff;
 }
 
-.grouptitle {color:#000000;font-weight:bold}
+.grouptitle {color:#000000;font-weight:bold;}
 
 .subtitle{background:transparent;color:inherit;}
 
@@ -62,6 +62,11 @@ li.other-item input.radio:checked + label,li.other-item input.checkbox:checked +
   {background:transparent;color:inherit;}
 li.other-item.checked
   {background:#FFD100;color:#000;}
+/* positive/negative highlighting for copy testing */
+li.checkbox-item input.positive:checked + label
+  {background:#33FF33 !important;}
+  li.checkbox-item input.negative:checked + label
+  {background:#FF4444 !important;}
 /* hover */
   li.radio-item label:hover,li.checkbox-item  input.checkbox + label:hover
   {background:#222222;color:#fff}
