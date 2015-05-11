@@ -171,3 +171,12 @@ li.checkbox-text-item input[type=checkbox] + label:hover:before,
 		display: none;
 	}
 }
+
+/****
+Additional BrandingBusiness Customer Styles
+****/
+.question-help { 
+	background: #FFFFFF;
+	border: none;
+}
+	
