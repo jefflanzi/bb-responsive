@@ -921,6 +921,7 @@ h2#surveytitle{font-size:1.2em;text-align:left;line-height:2em;padding:0 5px}
 p.question{text-align:center;margin: 0 1em}
 .textarea,.text {text-align: left;}
 table.question{/*table-layout:fixed;*/width:99%;}
+.answers-wrapper{min-height: .01%;overflow-x: auto;}/* table responsive */
 table.question{border:#ededed 1px solid;border-width:0 0 1px 0;width:100%;}
 table.question tbody{border:#ededed 1px solid;border-width:0 1px 0 0;}
 table.question thead th{border:#ededed 1px solid;border-width:1px 1px 0px 0px;padding:0.6em;font-weight:inherit;}
