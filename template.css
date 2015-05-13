@@ -173,10 +173,37 @@ li.checkbox-text-item input[type=checkbox] + label:hover:before,
 }
 
 /****
-Additional BrandingBusiness Customer Styles
+Additional BrandingBusiness Custom Styles
 ****/
+
+/* Remove border and background from question help */
 .question-help { 
 	background: #FFFFFF;
 	border: none;
 }
 	
+/* left align and increase width of dropdown */
+p.dropdown-item { text-align: left; }
+p.dropdown-item select { width: 50%; }
+
+/* add padding to group description text */
+div.groupdescription {
+    padding: 1em 1em 0em 1em;
+    vertical-align: middle;
+}
+
+/* smaller radio buttons/checkboxes */
+input[type=radio], input[type=checkbox] {
+    height: 1.2em;
+    width: 1.2em;
+}
+
+/* reduce font size for array items*/
+.array-flexible-row {
+    font-size: .9em;
+}
+
+table.question tbody th {
+    padding: .3em;
+}
+
