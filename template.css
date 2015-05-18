@@ -197,6 +197,11 @@ div.welcome {
     padding: 1.5em 1.5em;
 }
 
+/* reduce text display question type font size */
+.boilerplate.nohelp .question-text {
+    font-size: 1em;
+}
+
 /* smaller radio buttons/checkboxes */
 input[type=radio], input[type=checkbox] {
     height: 1.2em;
