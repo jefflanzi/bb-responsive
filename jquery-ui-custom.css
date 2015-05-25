@@ -1070,12 +1070,12 @@ ul.radio-list li:last-child.other-item,ul.checkbox-list li:last-child.other-item
 .slider-element,.slider_lefttext,.slider_righttext,.slider-label{
 display:table-cell;vertical-align: middle;
 }
-.multinum-slider-container{min-width:17em}
+.multinum-slider-container{width:17em}
 .slider-label{max-width:50%;width:auto;}
 .slider-reset-container{width:30px;}
 .slider-reset{margin-left: 0;}
 @media only screen and (min-width: 959px) {
-.multinum-slider-container{min-width:22em}
+.multinum-slider-container{width:22em}
 }
 
 
@@ -1087,7 +1087,7 @@ display:table-cell;vertical-align: middle;
 .slider_righttext{top:-1em;font-size:.9em;color:#666}
 
 @media screen and (max-width: 767px) {
-.multinum-slider-container{min-width:12em}
+.multinum-slider-container{width:12em}
 
 }
 @media handled,screen and (max-width: 479px) {
