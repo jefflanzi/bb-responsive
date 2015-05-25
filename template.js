@@ -36,6 +36,7 @@ if (window.jQuery) {
 		hovercolumn();
 		tableinput();
 		movePrevButton();
+		updateSlider();
 		// Opera mini labelling touch
 		operamini = window.operamini && ({}).toString.call( window.operamini ) === "[object OperaMini]";
 		if(operamini){
@@ -61,6 +62,13 @@ function navbuttonsJqueryUi(){
 	$("#movenextbtn").wrapInner("<span class='btn-text ui-button-text' />").append(" <i class='btn-icon ui-icon ui-icon-arrowthick-1-e'>   </i>");
 	$("#moveprevbtn").wrapInner("<span class='btn-text ui-button-text' />").prepend("<i class='btn-icon ui-icon ui-icon-arrowthick-1-w'>   </i> ");
 	$("#movesubmitbtn").wrapInner("<span class='btn-text ui-button-text' />").append(" <i class='btn-icon ui-icon ui-icon-arrowthickstop-1-s'>   </i>");
+}
+/* Adding some element to multi-numeric slider */
+function updateSlider()
+{ 
+	$(".multinum-slider").wrap("<div class='multinum-slider-container slider-element' />" );
+	$(".slider-reset").wrap("<div class='slider-reset-container slider-element' />" );
+	$(".slider-list [id^='container-']").slider( "option", "range", "min" );
 }
 function disableEnterSubmit(){
 	$(document).on('keypress','input[type=text],#limesurvey select',function(e){

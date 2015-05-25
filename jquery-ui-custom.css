@@ -1067,32 +1067,41 @@ ul.radio-list li:last-child.other-item,ul.checkbox-list li:last-child.other-item
 /* Cool button */
 
 /* Slider */
-.ui-slider{width:15em;display:inline;display:inline-block;border:1px solid #666;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;margin:.4em 0 .2em}
+.slider-element,.slider_lefttext,.slider_righttext,.slider-label{
+display:table-cell;vertical-align: middle;
+}
+.multinum-slider-container{min-width:17em}
+.slider-label{max-width:50%;width:auto;}
+.slider-reset-container{width:30px;}
+.slider-reset{margin-left: 0;}
+@media only screen and (min-width: 959px) {
+.multinum-slider-container{min-width:22em}
+}
+
+
 .slider_showmin{float:left;width:3em;font-size:.7em;font-weight:400;text-align:left;color:#666;margin:1.4em 0 0}
 .slider_showmax{float:right;width:3em;font-size:.7em;font-weight:400;text-align:right;color:#666;margin:1.4em 0 0}
-.slider_lefttext{display:inline-block;position:relative;top:-.5em;padding-right:1em;text-align:right;font-size:.9em;color:#666}
-.slider_righttext{display:inline-block;position:relative;top:-.5em;padding-left:1em;font-size:.9em;color:#666}
-.slider_callout{overflow:hidden;position:absolute;top:-1.3em;margin-left:.8em;text-align:right;color:#333;font-size:.9em}
-.ie .ui-slider{display:block;float:left;}
-.ie .slider_lefttext  {float: left;margin-top:1em;}
-.ie .slider_righttext {float: left;margin-top:1em;}
-.no-js .slider_showmin,.no-js .slider_showmax{display:none;}
-.no-js .slider_lefttext, .no-js .slider_righttext{display:none;}
-.slider-reset{display:inline-block;float:none;}
-@media handled,screen and (max-width: 479px) {
-  .ui-slider{width:96%;}
-  .slider_lefttext{display:block;top:0;padding:0;text-align:left}
-  .slider_righttext{display:block;top:0;padding:0;text-align:right}
-  .slider-reset{display:block;float:right;}
-}
-.ui-slider{border-color:#555;}
-.slider_showmin {color:#666;}
-.slider_showmax {color:#666;}
-.slider_lefttext {color:#666;}
-.slider_righttext {color:#666;}
-.slider_callout {color: #444;}
-ul.slider-list .slider-label{padding-top:0.7em;}
+.slider-label{padding-top:0.7em;}
 .slider-list .ui-slider-handle { height: 1.6em; }
+.slider_lefttext{top:-1em;text-align:right;font-size:.9em;color:#666}
+.slider_righttext{top:-1em;font-size:.9em;color:#666}
+
+@media screen and (max-width: 767px) {
+.multinum-slider-container{min-width:12em}
+
+}
+@media handled,screen and (max-width: 479px) {
+.slider-element,.slider_lefttext,.slider_righttext,.slider-label{
+display:block;
+}
+.multinum-slider-container{width:100%}
+.slider-label{max-width:100%;}
+.slider-reset-container{display:block;float:right;}
+
+.slider_lefttext{top:0;padding:0;text-align:left}
+.slider_righttext{top:0;padding:0;text-align:right}
+}
+
 /*Date time picker */
 button.ui-datepicker-trigger{padding:0.4em 0.8em;}
 .ui-datepicker td span, .ui-datepicker td a{padding:0;text-align:center;}
@@ -1370,6 +1379,12 @@ ul.checkbox-list li.other-item input.text {margin-left: 2.5em;}
 .ui-state-active .ui-icon {background-image: url(images/ui-icons_454545_256x240.png); }
 .ui-state-highlight .ui-icon {background-image: url(images/ui-icons_3A87AD_256x240.png); }
 .ui-state-error .ui-icon, .ui-state-error-text .ui-icon {background-image: url(images/ui-icons_B94A48_256x240.png); }
+.slider_showmin {color:#666;}
+.slider_showmax {color:#666;}
+.slider_lefttext {color:#666;}
+.slider_righttext {color:#666;}
+.slider_callout {color: #444;}
+.ui-slider-range{background-color:#ededed;}
 
 .progress-bar{border:1px solid #f1f1f1;border-width:1px 0}
 .progress-value{background:#f9f9f9;}
