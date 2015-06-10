@@ -66,9 +66,7 @@ ul ul { list-style: circle outside; }
 ul ul ul { list-style: disc outside; }
 ul ul, ul ol,
 ol ol, ol ul { margin: 4px 0 5px 30px; font-size: 95%;}
-img,video,svg,iframe{max-width: 100%;height: auto;
-*width:100%
-}
+img,video,svg,iframe{max-width: 100%;height: auto;}
 /* #Buttons */
 .button,button,input[type="submit"],input[type="reset"],input[type="button"]
 ,.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
@@ -90,7 +88,6 @@ display: inline-block;
 white-space: nowrap;
 margin: 0 0 0.5em;
 padding: 0.6em 1em;
-*display:inline;
 }
 .navigator button{font-weight:700}
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { 
