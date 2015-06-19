@@ -209,11 +209,17 @@ input[type=radio], input[type=checkbox] {
 }
 
 /* reduce font size for array items*/
-.array-flexible-row {
+.array-flexible-row .answers-wrapper {
     font-size: .9em;
 }
 
 table.question tbody th {
     padding: .3em;
 }
+
+/* reduce padding on ranking drag and drop items */
+.dragDropTable ul.dragDropChoiceList li, .dragDropTable ol.dragDropRankList li {
+    padding: 0em;
+}
+
 
